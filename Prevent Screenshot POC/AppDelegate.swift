@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func showBLockerImageView() {
-        let image = UIImage(named: "color-image")
         fullScreenBlockerImageview = BlockerRecordingView()
         window?.addSubview(fullScreenBlockerImageview!)
         fullScreenBlockerImageview?.frame = window?.bounds ?? .zero
