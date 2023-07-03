@@ -11,7 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var fullScreenBlockerImageview : UIImageView?
+    private var fullScreenBlockerImageview : BlockerRecordingView?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -37,8 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     func showBLockerImageView() {
         let image = UIImage(named: "color-image")
-        fullScreenBlockerImageview = UIImageView(image: image)
-        fullScreenBlockerImageview?.contentMode = .scaleAspectFill
+        fullScreenBlockerImageview = BlockerRecordingView()
         window?.addSubview(fullScreenBlockerImageview!)
         fullScreenBlockerImageview?.frame = window?.bounds ?? .zero
     }

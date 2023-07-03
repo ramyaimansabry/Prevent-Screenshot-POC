@@ -12,6 +12,8 @@
 		DC6404EE28CD3B1D004F59C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6404EC28CD3B1D004F59C0 /* Main.storyboard */; };
 		DC6404F028CD3B1E004F59C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6404EF28CD3B1E004F59C0 /* Assets.xcassets */; };
 		DC6404F328CD3B1E004F59C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6404F128CD3B1E004F59C0 /* LaunchScreen.storyboard */; };
+		DCC9CD862A53396C0041F4D2 /* BlockerRecordingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC9CD852A53396C0041F4D2 /* BlockerRecordingView.xib */; };
+		DCC9CD882A533C040041F4D2 /* BlockerRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9CD872A533C040041F4D2 /* BlockerRecordingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DC6404EF28CD3B1E004F59C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6404F228CD3B1E004F59C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC6404F428CD3B1E004F59C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC9CD852A53396C0041F4D2 /* BlockerRecordingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockerRecordingView.xib; sourceTree = "<group>"; };
+		DCC9CD872A533C040041F4D2 /* BlockerRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerRecordingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +60,22 @@
 			children = (
 				DC6404E628CD3B1D004F59C0 /* AppDelegate.swift */,
 				DC6404EA28CD3B1D004F59C0 /* ViewController.swift */,
+				DCC9CD822A5338FF0041F4D2 /* BlockerRecordingView */,
 				DC6404EC28CD3B1D004F59C0 /* Main.storyboard */,
 				DC6404EF28CD3B1E004F59C0 /* Assets.xcassets */,
 				DC6404F128CD3B1E004F59C0 /* LaunchScreen.storyboard */,
 				DC6404F428CD3B1E004F59C0 /* Info.plist */,
 			);
 			path = "Prevent Screenshot POC";
+			sourceTree = "<group>";
+		};
+		DCC9CD822A5338FF0041F4D2 /* BlockerRecordingView */ = {
+			isa = PBXGroup;
+			children = (
+				DCC9CD852A53396C0041F4D2 /* BlockerRecordingView.xib */,
+				DCC9CD872A533C040041F4D2 /* BlockerRecordingView.swift */,
+			);
+			path = BlockerRecordingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 				DC6404F328CD3B1E004F59C0 /* LaunchScreen.storyboard in Resources */,
 				DC6404F028CD3B1E004F59C0 /* Assets.xcassets in Resources */,
 				DC6404EE28CD3B1D004F59C0 /* Main.storyboard in Resources */,
+				DCC9CD862A53396C0041F4D2 /* BlockerRecordingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6404EB28CD3B1D004F59C0 /* ViewController.swift in Sources */,
+				DCC9CD882A533C040041F4D2 /* BlockerRecordingView.swift in Sources */,
 				DC6404E728CD3B1D004F59C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

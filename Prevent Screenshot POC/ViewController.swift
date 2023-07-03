@@ -15,38 +15,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Wrap the view inside a secured UITextfield.
         view.makeSecure()
-        
-        listenForScreenRecordingNotification()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
-    func listenForScreenRecordingNotification() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(screenCaptureDidChange),
-            name: UIScreen.capturedDidChangeNotification,
-            object: nil
-        )
-    }
-    
-    @objc
-    private func screenCaptureDidChange() {
-        debugPrint("screenCaptureDidChange.. isCapturing: \(UIScreen.main.isCaptured)")
-        
-        if UIScreen.main.isCaptured {
-            // They started capturing..
-            view.isHidden = true
-        } else {
-            // They stopped capturing..
-            view.isHidden = false
-        }
     }
 }
 
