@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         imageview = UIImageView(image: image)
         imageview?.contentMode = .scaleAspectFill
         window?.addSubview(imageview!)
+        imageview?.frame = window?.bounds ?? .zero
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
