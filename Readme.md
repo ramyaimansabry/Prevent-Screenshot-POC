@@ -1,6 +1,6 @@
 ## Prevent Screenshots & Screen Recording
 
-A POC for how to prevent screenshots (Actually shows a black screenshot) & screen recording for an iOS app with sensitive information.
+A POC for how to prevent screenshots (Actually shows a black screenshot) & screen recording (Hide sensitive content) for an iOS app with sensitive information.
 
 ### Features
 - Show black view screenshot.
