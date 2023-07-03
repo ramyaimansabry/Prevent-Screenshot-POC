@@ -11,7 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var imageview : UIImageView?
+    private var fullScreenBlockerImageview : UIImageView?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -20,23 +20,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
+        
+        listenForScreenRecordingNotification()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        let image = UIImage(named: "color-image")
-        imageview = UIImageView(image: image)
-        imageview?.contentMode = .scaleAspectFill
-        window?.addSubview(imageview!)
-        imageview?.frame = window?.bounds ?? .zero
+        showBLockerImageView()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        if imageview != nil {
-            imageview?.removeFromSuperview()
-            imageview = nil
+        hideBlockerImageView()
+    }
+}
+
+private extension AppDelegate {
+    func showBLockerImageView() {
+        let image = UIImage(named: "color-image")
+        fullScreenBlockerImageview = UIImageView(image: image)
+        fullScreenBlockerImageview?.contentMode = .scaleAspectFill
+        window?.addSubview(fullScreenBlockerImageview!)
+        fullScreenBlockerImageview?.frame = window?.bounds ?? .zero
+    }
+    
+    func hideBlockerImageView() {
+        if fullScreenBlockerImageview != nil {
+            fullScreenBlockerImageview?.removeFromSuperview()
+            fullScreenBlockerImageview = nil
         }
-        print("application")
+    }
+    
+    func listenForScreenRecordingNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(screenCaptureDidChange),
+            name: UIScreen.capturedDidChangeNotification,
+            object: nil
+        )
+    }
+    
+    @objc
+    func screenCaptureDidChange() {
+        debugPrint("screenCaptureDidChange.. isCapturing: \(UIScreen.main.isCaptured)")
+        
+        UIScreen.main.isCaptured ? showBLockerImageView() : hideBlockerImageView()
     }
 }
 
